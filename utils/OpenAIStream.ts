@@ -7,10 +7,10 @@ import {
 // This Code comes froms:
 // https://github.com/Nutlope/twitterbio
 
-export type ChatGPTAgent = "user" | "system";
+// export type ChatGPTAgent = "user" | "system";
 
 export interface ChatGPTMessage {
-  role: ChatGPTAgent;
+  role: string;
   content: string;
 }
 

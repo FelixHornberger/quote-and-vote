@@ -1,4 +1,4 @@
-import { ChatGPTAgent, OpenAIStream, OpenAIStreamPayload } from '@/utils/OpenAIStream'
+import { OpenAIStream, OpenAIStreamPayload } from '@/utils/OpenAIStream'
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error('Missing env var from OpenAI');
@@ -20,7 +20,7 @@ interface MessageWithoutIdAndTimestamp {
 
 interface Message {
   id: number;
-  role: ChatGPTAgent;
+  role: string;
   content: string;
   timestamp: string;
 }
