@@ -36,13 +36,13 @@ export async function POST(req: Request) {
       prompt?: string,
       messages: any,
     };
-    
+
     messages = messages["messages"]
     if (!prompt) {
       return new Response('No prompt in the request', { status: 400 });
     }
     let payload: OpenAIStreamPayload = {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4-turbo',
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.7,
       top_p: 1,
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       stream: true,
       n: 1,
     };
-    if (Array.isArray(messages) && messages.length > 0){
+    if (Array.isArray(messages) && messages.length > 0) {
       // Function to remove id and timestamp keys from a message
       // Iterate over every message and remove id and timestamp keys
       const messagesWithoutIdAndTimestamp: MessageWithoutIdAndTimestamp[] = messages.map(removeIdAndTimestamp);
