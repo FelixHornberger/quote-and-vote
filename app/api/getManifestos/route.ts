@@ -8,7 +8,7 @@ export async function POST(req: Request) {
         party_name: string,
       };
       console.log("Test: ", party_name)
-      let party_path = "/app/data/"
+      let party_path = "/app/data"
       switch (party_name){
         case 'AfD':
         case 'BSW':
