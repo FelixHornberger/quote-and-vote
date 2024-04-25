@@ -93,9 +93,9 @@ export default function ChatInput() {
                     );
                     event.currentTarget.value = '';
                     if (counterChat === 0) {
-                        generateAnswer(event, await generatePrompt(messageText, partyStore.party));
+                        generateAnswer(event, messageText);
                     } else {
-                        generateAnswer(event, await generatePrompt(messageText, partyStore.party));
+                        generateAnswer(event, messageText);
                     }
 
                     if (!showButton) {

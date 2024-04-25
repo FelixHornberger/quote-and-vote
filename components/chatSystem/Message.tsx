@@ -4,7 +4,10 @@ function Message({ id, role, message }: { id: number, role: string, message: str
 
     const formattedMessage = message.replace(/\n/g, '<br>');
     const sanitizedMessage = DOMPurify.sanitize(formattedMessage);
-    if (id % 2 == 0) {
+    if (id == -99) {
+        return(<></>)
+    }
+    if (role == "User") {
         return (
             <div className="bg-chat-bg-user px-2.5 py-1 text-custom-bg" id={`message-${id}`}>
                 <span className="font-semibold">{role}:</span>

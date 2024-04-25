@@ -1,4 +1,5 @@
 import { OpenAIStream, OpenAIStreamPayload } from '@/utils/OpenAIStream'
+import { AnthropicVertex } from '@anthropic-ai/vertex-sdk';
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error('Missing env var from OpenAI');
@@ -36,14 +37,17 @@ export async function POST(req: Request) {
       prompt?: string,
       messages: any,
     };
-
     messages = messages["messages"]
     if (!prompt) {
       return new Response('No prompt in the request', { status: 400 });
     }
+
+    const messagesWithoutIdAndTimestamp: MessageWithoutIdAndTimestamp[] = messages.map(removeIdAndTimestamp);
+    messagesWithoutIdAndTimestamp.push({ role: 'user', content: prompt })
+
     let payload: OpenAIStreamPayload = {
       model: 'gpt-4-turbo',
-      messages: [{ role: 'user', content: prompt }],
+      messages: messagesWithoutIdAndTimestamp,
       temperature: 0.7,
       top_p: 1,
       frequency_penalty: 0,
@@ -55,8 +59,7 @@ export async function POST(req: Request) {
     if (Array.isArray(messages) && messages.length > 0) {
       // Function to remove id and timestamp keys from a message
       // Iterate over every message and remove id and timestamp keys
-      const messagesWithoutIdAndTimestamp: MessageWithoutIdAndTimestamp[] = messages.map(removeIdAndTimestamp);
-      messagesWithoutIdAndTimestamp.push({ role: 'user', content: prompt })
+      
       payload = {
         model: 'gpt-4-turbo',
         messages: messagesWithoutIdAndTimestamp,

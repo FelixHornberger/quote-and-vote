@@ -28,10 +28,10 @@ const getManifesto = async (party_name: string) => {
     return data;
 }
 
-export async function generatePrompt(userInput: string, party_name: string) {
+export async function generatePrompt(party_name: string) {
     let prompt = `You are a generative AI model that has the task of informing the user about the party's election programme for the 2024 EU elections. The party is ${party_name}. There manifesto is:\n`;
     const manifesto = await getManifesto(party_name);
     prompt += manifesto;
     console.log("prompt: ", prompt)
-    return prompt += ' This is the prompt of the user: ' + userInput;
+    return prompt;
 }

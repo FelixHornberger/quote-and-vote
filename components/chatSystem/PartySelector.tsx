@@ -1,13 +1,34 @@
 'use client'
 import { usePartyStore } from "@/zustand/party";
+import { useMessageStore} from '@/zustand/message'
+import { useState } from "react";
+import { timeStamp } from "console";
+import { generatePrompt } from "@/utils/prompt";
 
-// When you optimize this you could probalby use one Selct Input for both gender and occupation but what do i know :()
 export default function PartySelector() {
-    const setGender = usePartyStore((state) => state.setParty)
+    const setParty = usePartyStore((state) => state.setParty);
+    const addMessage = useMessageStore((state) => state.addMessage);
+    const updateMessage = useMessageStore((state) => state.updateMessage);
+    const [message, insertedMessage] = useState(false);
+
+    const messageID = -99
+
+    // TODO: When this gets changed to its own site smt like -> preStudyPage then this handle click needs to get moved to the button logic.
+
+    const handleClick = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setParty(e.target.value)
+        let system_introduction_message = await generatePrompt(e.target.value);
+        if (!message) {
+            addMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+        } else {
+            updateMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+        }
+    }
+
     return (
         <select id="selected_party" className="h-6 border border-custom-text bg-transparent self-center"
             style={{ fontFamily: "'__Inter_aaf875', '__Inter_Fallback_aaf875', sans-serif" }}
-            onChange={(e) => setGender(e.target.value)}>
+            onChange={(e) => handleClick(e)}>
             <option value="" disabled selected>
                 Select an option
             </option>
