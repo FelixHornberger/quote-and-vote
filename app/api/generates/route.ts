@@ -1,5 +1,4 @@
 import { OpenAIStream, OpenAIStreamPayload } from '@/utils/OpenAIStream'
-import { AnthropicVertex } from '@anthropic-ai/vertex-sdk';
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error('Missing env var from OpenAI');
