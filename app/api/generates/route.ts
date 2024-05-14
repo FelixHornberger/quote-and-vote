@@ -45,9 +45,9 @@ export async function POST(req: Request) {
     messagesWithoutIdAndTimestamp.push({ role: 'user', content: prompt })
 
     let payload: OpenAIStreamPayload = {
-      model: 'gpt-4-turbo',
+      model: 'gpt-4o',
       messages: messagesWithoutIdAndTimestamp,
-      temperature: 0.7,
+      temperature: 0,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
       // Iterate over every message and remove id and timestamp keys
       
       payload = {
-        model: 'gpt-4-turbo',
+        model: 'gpt-4o',
         messages: messagesWithoutIdAndTimestamp,
         temperature: 0.7,
         top_p: 1,
