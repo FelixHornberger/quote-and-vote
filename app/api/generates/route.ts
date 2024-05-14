@@ -62,7 +62,7 @@ export async function POST(req: Request) {
       payload = {
         model: 'gpt-4o',
         messages: messagesWithoutIdAndTimestamp,
-        temperature: 0.7,
+        temperature: 0,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
