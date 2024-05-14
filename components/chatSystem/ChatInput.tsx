@@ -39,6 +39,7 @@ export default function ChatInput() {
             }),
         });
         if (!response.ok) {
+            addMessageZustand({ id: -1000, role: "System", content: "An error occured please resubmit your question", timestamp: new Date().toLocaleTimeString() })
             throw new Error(response.statusText);
         }
         const data = response.body;
