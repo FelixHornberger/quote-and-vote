@@ -32,15 +32,6 @@ export default function PartySelector() {
             <option value="" disabled selected>
                 Select an option
             </option>
-            <option id="de_afd">AfD</option>
-            <option id="de_bsw">BSW</option>
-            <option id="de_union">Union</option>
-            <option id="de_linke">Die Linke</option>
-            <option id="de_fdp">FDP</option>
-            <option id="de_fw">Freie Waehler</option>
-            <option id="de_gruene">Buendnis90 / Die Gruenen</option>
-            <option id="de_spd">SPD</option>
-            <option id="de_tierschutzpartei">Tierschutzpartei</option>
             <option id="eu_alde">Alliance of Liberals and Democrats for Europe Party (ALDE)</option>
             <option id="eu_ecpm">The European Christian Political Movement (ECPM)</option>
             <option id="eu_edp">European Democrats (EDP)</option>
