@@ -6,25 +6,17 @@ import PartySelector from '@/components/chatSystem/PartySelector';
 export default function Home() {
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <div id='task-root' className="flex-col flex w-full min-h-[100vh]">
-            <div className='flex-1 overflow-hidden'>
-                <div className='relative h-full'>
-                    <div className='w-full h-full overflow-y-auto'>
-                        <div className='flex flex-col'>
-                            <div className='fixed top-0 w-full h-[40px]'>
-                                <div className='flex flex-row w-full border-b border-custom-text bg-custom-bg justify-center text-center'>
-                                    <h2 className='py-2 pr-2.5'>Selected Party: </h2>
-                                    <PartySelector/>
-                                </div>
-                            </div>
-                            <ChatHistory/>
-                        </div>
-                    </div>
+    <main className="flex flex-col items-center justify-between">
+      <div className="text-center place-items-center mb-3">
+                <h1 >Welcome to my Study</h1>
+            </div>
+            <div className="px-5 flex justify-center">
+                <div className="task-box mb-3 max-w-prose place-items-center px-5 border border-neutral-900">
+                    <p className="text-center">
+                        You are invited to take part in an online study investigating information gathering in elections. The study will be conducted by Felix Hornberger and supervised by Dr. David Elsweiler from the University of Regensburg. The duration of the study is 15 minutes. Students at the University of Regensburg will receive 0.25 credit hours. The study can only be started once and should be completed in one go.
+                    </p>
                 </div>
             </div>
-            <ChatInput />
-        </ div>
     </main>
   );
 }
