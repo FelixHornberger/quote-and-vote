@@ -26,7 +26,7 @@ function Message({ id, role, message }: { id: number, role: string, message: str
                     className="m-px break-words leading-relaxed"
                     components={{
                         p({ children }) {
-                          return <p className="mb-2 last:mb-0">{children}</p>;
+                          return <p className="my-2">{children}</p>;
                         },
                         h3({children}) {
                             return (<h3>
