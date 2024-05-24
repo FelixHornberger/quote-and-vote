@@ -1,6 +1,4 @@
 import { promises as fs } from 'fs';
-import path from 'path';
-import { json } from 'stream/consumers';
 
 export async function POST(req: Request) {
     try {
@@ -10,16 +8,6 @@ export async function POST(req: Request) {
         console.log("Test: ", party_name)
         let party_path = "/app/data"
         switch (party_name) {
-            case 'AfD':
-            case 'BSW':
-            case 'Union':
-            case 'Die Linke':
-            case 'FDP':
-            case 'Freie Waehler':
-            case 'Buendnis90 / Die Gruenen':
-            case 'SPD':
-            case 'Tierschutzpartei':
-            // EU-Parties
             case 'Alliance of Liberals and Democrats for Europe Party (ALDE)':
                 party_path += "/eu/alde_eu-wahlprogramm_2024.txt";
                 break;
