@@ -1,6 +1,7 @@
 import ChatHistory from '@/components/chatSystem/ChatHistory';
 import ChatInput from '@/components/chatSystem/ChatInput';
-import PartySelector from '@/components/chatSystem/PartySelector';
+import PartySelected from '@/components/chatSystem/PartySelected';
+import PartySelector from '@/components/PartySelector';
 
 export default function Home() {
   
@@ -13,8 +14,7 @@ export default function Home() {
                         <div className='flex flex-col'>
                             <div className='fixed top-0 w-full h-[40px]'>
                                 <div className='flex flex-row w-full border-b border-custom-text bg-custom-bg justify-center text-center'>
-                                    <h2 className='py-2 pr-2.5'>Selected Party: </h2>
-                                    <PartySelector/>
+                                    <PartySelected/>
                                 </div>
                             </div>
                             <ChatHistory/>
