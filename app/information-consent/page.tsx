@@ -1,5 +1,8 @@
+import NavButton from "@/components/buttons/NavButton";
+import Checkbox from "@/components/Checkbox";
+
 export default function Home() {
-  
+    
     return (
       <main className="flex flex-col items-center justify-between">
         <h1 className="text-center mb-3">Informed Consent of Study Participation</h1>
@@ -75,6 +78,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <Checkbox checkboxText="I accept the conditions"/>
       </main>
     );
   }
