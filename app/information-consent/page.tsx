@@ -9,7 +9,9 @@ export default function Home() {
             <div className="px-5 flex justify-center">
                 <div className="task-box mb-3 max-w-prose place-items-center px-5 border border-neutral-900 text-center">
                     <p>
-                        TODO: FILL in introduction text
+                    You are invited to participate in the online study, which investigates information gathering for the EU elections on 9 June 2024. 
+                    The study is conducted by Felix Hornberger and supervised by Dr. David Elsweiler from the University of Regensburg. 
+                    The study will take place in the period from 2024-05-25 to 2024-06-08. Please note:
                     </p>
                     <p className="my-2">Please note:</p>
                     <div className="text-left">
@@ -29,7 +31,10 @@ export default function Home() {
                             human research subject, please contact Dr. David Elsweiler. Please read the following information
                             carefully and take the time you need.</p>
                         <h2 className="text-center my-2">1. Purpose and Goal of this Research</h2>
-                        <p className="font-normal">TODO: FILL IN</p>
+                        <p className="font-normal">
+                            The purpose of this research is to investigate how Generative Information Retrieval systems can be used for information gathering om elections. 
+                            The goal of this study is to analyze how the Generative Information Retrieval systems and their answers provided affect users&apos; perspectives and engagement on a party and their manifesto for the EU elections on 9 June 2024. Your participation will help us achieve this research goal. 
+                            The results of this research may be presented at scientific or professional meetings or published in scientific proceedings and journals.</p>
                         <h2 className="text-center my-2">2. Study Participation</h2>
                         <p className="font-normal">Your participation in this online study is entirely voluntary and can be discontinued or withdrawn at any
                             time. You can refuse to answer any questions or continue with the study at any time if you feel
@@ -41,7 +46,18 @@ export default function Home() {
                         <h2 className="text-center my-2">3. Study Procedure</h2>
                         <p className="font-normal my-2">After confirming this informed consent, the procedure is as follows:</p>
                         <ul className="mb-2">
-                            TODO: FILL IN
+                        <li>1. You will be initially provided with a brief introduction to the study. After this, you will complete the informed
+                                consent process.</li>
+                            <li>2. You are now survey abdout your personal data (age, gender, level of education, occupation, political view point and if you like to read or chat more about a topic)</li>
+                            <li>3. You are now asked to select the party you want to know more about and then you have to indicate how likely you are to vote for it. </li>
+                            <li>4. Now you either interact with a website on which the party programme has been posted or you are presented with a chat window with either a proactive chatbot 
+                                (which always adds at the end of a message that it knows even more about the party programme) or a passive chatbot (Base GPT-4o).
+                                Your conversation with the chatbot will be forwarded to third-party
+                                providers. Therefore, do not disclose any personal data in the chat and do not share any information
+                                that you would not discuss with other people. Only chat data will be shared with third party providers.
+                                Other data, such as demographics data, will not be shared outside the research team.</li>
+                            <li>5. After completing the task, you will be presented with a short questionnaire to determine how likely it is that you will vote in favour of this party. 
+                                You will also be asked what new things you have learned about the election programme.</li>
                         </ul>
                         <p className="font-normal my-2">The confirmation of participation in this study can be obtained directly from the researchers.</p>
                         <h2 className="text-center my-2">4. Risks and Benefits</h2>
