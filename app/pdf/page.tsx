@@ -1,5 +1,4 @@
 import NavButton from "@/components/buttons/NavButton";
-import TestButton from "@/components/buttons/TestButton";
 import ManifestoComponent from "@/components/ManifestoComponent";
 
 export default function Home() {
