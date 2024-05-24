@@ -9,11 +9,9 @@
     time TEXT NOT NULL);
 */
 
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 import { Pool } from 'pg';
 
-
-// This should probably be its own file later
 const pool = new Pool({
     user: process.env.POSTGRES_USER,
     host: process.env.POSTGRES_HOST,
@@ -24,34 +22,29 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false },
 });
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    if (req.method === 'POST') {
-        const { matrikel, firstname, lastname, degreeProgramm, time }:
-            {
-                matrikel: string,
-                firstname: string,
-                lastname: string,
-                degreeProgramm: string,
-                time: string // I am not sure what type suits better
-            } = req.body;
-        try {
-            const client = await pool.connect();
+export const POST = async (req: NextRequest) => {
+    const { matrikel, firstname, lastname, degreeProgramm, time }: {
+        matrikel: string;
+        firstname: string;
+        lastname: string;
+        degreeProgramm: string;
+        time: string;
+    } = await req.json();
 
-            await client.query(`INSERT INTO Credits  (matrikel, firstname, lastname, degreeprogramme, time)
-                                VALUES ($1, $2, $3, $4, $5)`,
-                                [matrikel, firstname, lastname, degreeProgramm, time])
+    try {
+        const client = await pool.connect();
+        await client.query(
+            `INSERT INTO Credits  (matrikel, firstname, lastname, degreeprogramme, time)
+            VALUES ($1, $2, $3, $4, $5)`,
+            [matrikel, firstname, lastname, degreeProgramm, time]
+        );
+        client.release();
 
-            client.release();
-            res.status(201).json({ message: 'Student inserted succesfully ' });
-        } catch (error) {
-            console.error('Error executing query:', error);
-            res.status(500).json({ error: 'Internal Server Error' });
-        }
-    } else {
-        res.setHeader('Allow', ['POST']);
-        res.status(405).end(`Method ${req.method} Not Allowed`);
+        return NextResponse.json({ message: 'Student inserted successfully' }, { status: 201 });
+    } catch (error) {
+        console.error('Error executing query:', error);
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
-
 };
 
-export default handler;
+export const runtime = 'nodejs';
