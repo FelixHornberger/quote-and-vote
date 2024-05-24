@@ -2,31 +2,37 @@
 import { usePartyStore } from "@/zustand/party";
 import { useMessageStore} from '@/zustand/message'
 import { useState } from "react";
-import { timeStamp } from "console";
 import { generatePrompt } from "@/utils/prompt";
+import { useHrefStore } from "@/zustand/href";
+import { useConditionStore } from "@/zustand/condition";
 
 export default function PartySelector() {
-    const setParty = usePartyStore((state) => state.setParty);
+
+    const {setParty} = usePartyStore();
     const addMessage = useMessageStore((state) => state.addMessage);
     const updateMessage = useMessageStore((state) => state.updateMessage);
+    const {activeCondition} = useConditionStore();
     const [message, insertedMessage] = useState(false);
+    const {href} = useHrefStore()
 
     const messageID = -99
 
     // TODO: When this gets changed to its own site smt like -> preStudyPage then this handle click needs to get moved to the button logic.
-
+    // This function should defintly be moved to the button so the calls to the api get reduced to the bare minimum
     const handleClick = async (e: React.ChangeEvent<HTMLSelectElement>) => {
         setParty(e.target.value)
-        let system_introduction_message = await generatePrompt(e.target.value);
-        if (!message) {
-            addMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
-        } else {
-            updateMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+        if (href !== '/pdf') {
+            let system_introduction_message = await generatePrompt(e.target.value, activeCondition);
+            if (!message) {
+                addMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+            } else {
+                updateMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+            }
         }
     }
 
     return (
-        <select id="selected_party" className="h-6 border border-custom-text bg-transparent self-center"
+        <select id="selected_party" className="h-6 w-full border border-custom-text bg-transparent self-center"
             style={{ fontFamily: "'__Inter_aaf875', '__Inter_Fallback_aaf875', sans-serif" }}
             onChange={(e) => handleClick(e)}>
             <option value="" disabled selected>
