@@ -1,8 +1,10 @@
 import AgeInput from "@/components/demographics/AgeInput";
-import DemographicsButton from "@/components/demographics/DemographicsButton";
+import DemographicsButton from "@/components/buttons/DemographicsButton";
 import Education from "@/components/demographics/Education";
 import Gender from "@/components/demographics/Gender";
 import Occupation from "@/components/demographics/Occupation";
+import PreferedInformationGatheringWay from "@/components/demographics/PreferedInformationGathering";
+import Likertscale from "@/components/Likertscale";
 
 export default function Home() {
     return(
@@ -30,6 +32,16 @@ export default function Home() {
                         at a university insert &apos;Student&apos;) (Please enter &apos;Student&apos; if you need the VP hours)
                     </p>
                     <Occupation></Occupation>
+                </div>
+                <div className="mb-3 text-left">
+                    <p> What is your favourite way to find out about a topic?</p>
+                    <PreferedInformationGatheringWay/>
+                </div>
+                <div className="mb-3 text-left">
+                    <p>
+                        Where do you place yourself on the political scale?
+                    </p>
+                    <Likertscale topic="politicalSelfEstimation" descriptionLeft="Far left" descriptionRight="Far right"></Likertscale>
                 </div>
                 <DemographicsButton></DemographicsButton>
             </div>
