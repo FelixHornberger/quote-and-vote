@@ -27,7 +27,7 @@ export default function ChatInput() {
         e.preventDefault();
         setGeneratedAnswers("");
         setLoading(true);
-        const response = await fetch('/api/generates', {
+        const response = await fetch('/api/generatesAnthropic', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,36 +46,35 @@ export default function ChatInput() {
             addMessageZustand({ id: -1000, role: "System", content: "An error occured please resubmit your question", timestamp: new Date().toLocaleTimeString() })
             return;
         }
+        console.log(counterChat)
         let currentID = counterChat + 1;
         let updateCounter = 0
         let update_string = ""
-        const onParseGPT = (event: ParsedEvent | ReconnectInterval) => {
-            if (event.type === 'event') {
-                const data = event.data;
-                try {
-                    const text = JSON.parse(data).text ?? '';
-                    setGeneratedAnswers((prev) => prev + text);
-                    update_string += text
-                    if (updateCounter === 0) {
-                        addMessageZustand({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
-                    } else {
-                        updateMessage({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
-                    }
-                    updateCounter++;
-                } catch (e) {
-                    console.error(e);
-                }
-            }
-        };
         const reader = data.getReader();
         const decoder = new TextDecoder();
-        const parser = createParser(onParseGPT);
         let done = false;
         while (!done) {
             const { value, done: doneReading } = await reader.read();
             done = doneReading;
-            const chunkValue = decoder.decode(value);
-            parser.feed(chunkValue);
+            const text = decoder.decode(value)
+            const parts = text.split(">>");
+
+            for (const part of parts) {
+                if (part) {
+                    const json = JSON.parse(part)
+                    const content = json.message;
+                    if (content && content !== "undefined"){
+                        setGeneratedAnswers((prev) => prev + content);
+                        update_string += content
+                        if (updateCounter === 0) {
+                            addMessageZustand({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
+                        } else {
+                            updateMessage({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
+                        }
+                        updateCounter++;
+                    }
+                }
+            }
         }
         setLoading(false);
     };
@@ -104,6 +103,7 @@ export default function ChatInput() {
                     }
                     setCounterChat(counterChat + 2);
                 }
+
             }
         }
     }
