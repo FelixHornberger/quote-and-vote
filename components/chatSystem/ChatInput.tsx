@@ -3,11 +3,6 @@
 import { useMessageStore } from "@/zustand/message";
 import { useState } from "react";
 import { KeyboardEvent } from 'react';
-import {
-    createParser,
-    ParsedEvent,
-    ReconnectInterval,
-} from 'eventsource-parser';
 import Loader from "./Loader";
 import TaskButton from "../buttons/TaskButton";
 import { useSystemPromptStore } from "@/zustand/systemPrompt";
@@ -27,7 +22,7 @@ export default function ChatInput() {
         e.preventDefault();
         setGeneratedAnswers("");
         setLoading(true);
-        const response = await fetch('/api/generatesAnthropic', {
+        const response = await fetch('/api/streamAnthropic', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,38 +36,46 @@ export default function ChatInput() {
         if (!response.ok) {
             throw new Error(response.statusText);
         }
+
         const data = response.body;
+     
         if (!data) {
             addMessageZustand({ id: -1000, role: "System", content: "An error occured please resubmit your question", timestamp: new Date().toLocaleTimeString() })
             return;
         }
-        console.log(counterChat)
+
         let currentID = counterChat + 1;
         let updateCounter = 0
         let update_string = ""
+        
         const reader = data.getReader();
         const decoder = new TextDecoder();
         let done = false;
+        let currentContent = "";
+
         while (!done) {
             const { value, done: doneReading } = await reader.read();
             done = doneReading;
-            const text = decoder.decode(value)
-            const parts = text.split(">>");
-
-            for (const part of parts) {
-                if (part) {
-                    const json = JSON.parse(part)
-                    const content = json.message;
-                    if (content && content !== "undefined"){
-                        setGeneratedAnswers((prev) => prev + content);
-                        update_string += content
+            const text = decoder.decode(value);
+            const lines = text.trim().split('\n');
+            for (const line of lines) {
+                try{
+                    if (!line) {
+                        continue;
+                    }
+                    const json = JSON.parse(line);
+                    if (json.type === "content_block_delta") {
+                        currentContent += json.delta.text;
+                        setGeneratedAnswers((prev) => prev + currentContent);
                         if (updateCounter === 0) {
-                            addMessageZustand({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
+                            addMessageZustand({ id: currentID, role: "Assistant", content: currentContent as string, timestamp: new Date().toLocaleTimeString() });
                         } else {
-                            updateMessage({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
+                            updateMessage({ id: currentID, role: "Assistant", content: currentContent as string, timestamp: new Date().toLocaleTimeString() });
                         }
                         updateCounter++;
                     }
+                } catch (e) {
+                    console.error("Error: ", e)
                 }
             }
         }
