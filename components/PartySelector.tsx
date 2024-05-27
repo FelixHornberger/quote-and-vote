@@ -5,12 +5,14 @@ import { useState } from "react";
 import { generatePrompt } from "@/utils/prompt";
 import { useHrefStore } from "@/zustand/href";
 import { useConditionStore } from "@/zustand/condition";
+import { useSystemPromptStore } from "@/zustand/systemPrompt";
 
 export default function PartySelector() {
 
     const {setParty} = usePartyStore();
     const addMessage = useMessageStore((state) => state.addMessage);
     const updateMessage = useMessageStore((state) => state.updateMessage);
+    const {setSystemPrompt} = useSystemPromptStore();
     const {activeCondition} = useConditionStore();
     const [message, insertedMessage] = useState(false);
     const {href} = useHrefStore()
@@ -24,10 +26,13 @@ export default function PartySelector() {
         if (href !== '/pdf') {
             let system_introduction_message = await generatePrompt(e.target.value, activeCondition);
             if (!message) {
-                addMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+                setSystemPrompt (system_introduction_message);
+                // addMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
             } else {
-                updateMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+                // updateMessage({id: messageID, role: "User", content: system_introduction_message, timestamp: new Date().toLocaleTimeString()})
+                setSystemPrompt (system_introduction_message);
             }
+            // addMessage({id: messageID, role: "Assistant", content: "Acknowledged.", timestamp: new Date().toLocaleTimeString()})
         }
     }
 

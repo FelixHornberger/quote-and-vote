@@ -10,8 +10,7 @@ import {
 } from 'eventsource-parser';
 import Loader from "./Loader";
 import TaskButton from "../buttons/TaskButton";
-import { generatePrompt } from "@/utils/prompt";
-import { usePartyStore } from "@/zustand/party";
+import { useSystemPromptStore } from "@/zustand/systemPrompt";
 
 export default function ChatInput() {
 
@@ -21,7 +20,7 @@ export default function ChatInput() {
     const [counterChat, setCounterChat] = useState(0);
     const addMessageZustand = useMessageStore((state) => state.addMessage);
     const updateMessage = useMessageStore((state) => state.updateMessage);
-    const partyStore = usePartyStore();
+    const {systemPrompt} = useSystemPromptStore();
     const messages = useMessageStore();
 
     const generateAnswer = async (e: any, prompt: string) => {
@@ -36,6 +35,7 @@ export default function ChatInput() {
             body: JSON.stringify({
                 prompt,
                 messages,
+                systemPrompt,
             }),
         });
         if (!response.ok) {
@@ -57,9 +57,9 @@ export default function ChatInput() {
                     setGeneratedAnswers((prev) => prev + text);
                     update_string += text
                     if (updateCounter === 0) {
-                        addMessageZustand({ id: currentID, role: "System", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
+                        addMessageZustand({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
                     } else {
-                        updateMessage({ id: currentID, role: "System", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
+                        updateMessage({ id: currentID, role: "Assistant", content: update_string as string, timestamp: new Date().toLocaleTimeString() })
                     }
                     updateCounter++;
                 } catch (e) {
