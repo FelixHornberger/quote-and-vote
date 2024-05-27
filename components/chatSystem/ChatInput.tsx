@@ -46,7 +46,6 @@ export default function ChatInput() {
 
         let currentID = counterChat + 1;
         let updateCounter = 0
-        let update_string = ""
         
         const reader = data.getReader();
         const decoder = new TextDecoder();
