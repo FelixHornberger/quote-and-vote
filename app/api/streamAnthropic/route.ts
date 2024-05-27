@@ -1,10 +1,4 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { Stream } from "@anthropic-ai/sdk/streaming.mjs";
-
-/* 
-    Credits where credits belong: 
-    https://github.com/cjgammon/llm-demos/tree/anthropic
-*/
 
 export const runtime = "edge"
 
@@ -45,7 +39,7 @@ export async function POST(req: Request) {
 
         const stream = await client.messages.stream({
             messages: messagesWithoutIdAndTimestamp as Anthropic.Messages.MessageParam[],
-            model: 'claude-3-opus-20240229',
+            model: 'claude-3-haiku-20240307',
             max_tokens: 4096,
             system: systemPrompt,
             temperature: 0,
@@ -53,9 +47,6 @@ export async function POST(req: Request) {
 
         return new Response(stream.toReadableStream(), {
             headers: new Headers({
-                // since we don't use browser's EventSource interface, specifying content-type is optional.
-                // the eventsource-parser library can handle the stream response as SSE, as long as the data format complies with SSE:
-                // https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#sending_events_from_the_server
         
                 'Content-Type': 'text/event-stream',
                 'Cache-Control': 'no-cache',
