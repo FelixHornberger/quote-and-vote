@@ -15,9 +15,9 @@ function Likertscale({topic, descriptionLeft, descriptionRight}:
   };
   return (
     <div className='flex justify-center text-center w-full'>
-      <div className="inline-grid sm:flex sm:content-center sm:justify-center">
-        <p className="">{descriptionLeft}</p>
-        <ul className="list-none px-5 place-content-around place-items-center inline-grid sm:flex" id={topic}>
+      <div className="inline-grid sm:flex sm:justify-center sm:items-center">
+        <p className="flex-[30%]">{descriptionLeft}</p>
+        <ul className="list-none px-5 py-5 sm:py-0 place-content-around place-items-center inline-grid sm:flex " id={topic}>
           {[...Array(7).keys()].map((index) => (
             <li key={index} className="px-2 scale-150">
               <input
@@ -30,7 +30,7 @@ function Likertscale({topic, descriptionLeft, descriptionRight}:
             </li>
           ))}
         </ul>
-        <p>{descriptionRight}</p>
+        <p className='flex-[30%]'>{descriptionRight}</p>
       </div>
     </div>
   );
