@@ -7,7 +7,7 @@ export default function Home() {
       <main className="flex flex-col items-center justify-between">
         <h1 className="text-center mb-3">Informed Consent of Study Participation</h1>
             <div className="px-5 flex justify-center">
-                <div className="task-box mb-3 max-w-prose place-items-center px-5 border border-neutral-900 text-center">
+                <div className="task-box mb-3 max-w-prose place-items-center px-5 border border-neutral-900">
                     <p>
                     You are invited to participate in the online study, which investigates information gathering for the EU elections on 9 June 2024. 
                     The study is conducted by Felix Hornberger and supervised by Dr. David Elsweiler from the University of Regensburg. 
@@ -51,7 +51,7 @@ export default function Home() {
                             <li>2. You are now survey abdout your personal data (age, gender, level of education, occupation, political view point and if you like to read or chat more about a topic)</li>
                             <li>3. You are now asked to select the party you want to know more about and then you have to indicate how likely you are to vote for it. </li>
                             <li>4. Now you either interact with a website on which the party programme has been posted or you are presented with a chat window with either a proactive chatbot 
-                                (which always adds at the end of a message that it knows even more about the party programme) or a passive chatbot (Base GPT-4o).
+                                ([Claude 3 Haiku] which always adds at the end of a message that it knows even more about the party programme) or a passive chatbot (Claude 3 Haiku).
                                 Your conversation with the chatbot will be forwarded to third-party
                                 providers. Therefore, do not disclose any personal data in the chat and do not share any information
                                 that you would not discuss with other people. Only chat data will be shared with third party providers.
