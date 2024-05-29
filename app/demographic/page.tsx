@@ -34,7 +34,7 @@ export default function Home() {
                     <Occupation></Occupation>
                 </div>
                 <div className="mb-3 text-left">
-                    <p> What is your favourite way to find out about a topic?</p>
+                    <p> What would have been your favourite way to find out about the party manifesto? </p>
                     <PreferedInformationGatheringWay/>
                 </div>
                 <div className="mb-3 text-left">
