@@ -9,28 +9,31 @@ export async function POST(req: Request) {
         let party_path = "/app/data"
         switch (party_name) {
             case 'Alliance of Liberals and Democrats for Europe Party (ALDE)':
-                party_path += "/eu/alde_eu-wahlprogramm_2024.txt";
+                party_path += "/eu/alde_eu-manifesto_2024.txt";
                 break;
             case 'The European Christian Political Movement (ECPM)':
-                party_path += "/eu/ecpm_eu-wahlprogramm_2024.txt"
+                party_path += "/eu/ecpm_eu-manifesto_2024.txt"
+                break;
+            case 'European Conservatives and Reformists (ECR)':
+                party_path += "/eu/ecr_eu-manifesto_2024.txt"
                 break;
             case 'European Democrats (EDP)':
-                party_path += "/eu/edp_eu-wahlprogramm_2024.txt";
+                party_path += "/eu/edp_eu-manifesto_2024.txt";
                 break;
             case 'European Free Alliance (EFA)':
-                party_path += "/eu/efa_eu-wahlprogramm_2024.txt";
+                party_path += "/eu/efa_eu-manifesto_2024.txt";
                 break;
             case 'European people\'s party (EPP)':
-                party_path += "/eu/epp_eu-wahlprogramm_2024.txt";
+                party_path += "/eu/epp_eu-manifesto_2024.txt";
                 break;
             case 'European Greens (EGP)':
-                party_path += "/eu/egp_eu-wahlprogramm_2024.txt";
+                party_path += "/eu/egp_eu-manifesto_2024.txt";
                 break;
             case 'European-LEFT (EL)':
-                party_path += "/eu/el_eu-wahlprogramm_2024.txt";
+                party_path += "/eu/el_eu-manifesto_2024.txt";
                 break;
             case 'The Party of European Socialists (PES)':
-                party_path += "/eu/pes_eu-wahlprogramm_2024.txt";
+                party_path += "/eu/pes_eu-manifesto_2024.txt";
                 break;
         }
         try {
