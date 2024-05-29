@@ -1,5 +1,4 @@
 import PartySelector from "./PartySelector";
-import PartySelector2 from "./PartySelector2";
 
 export default function QuestionElement({question}:{question:string}) {
     return (
