@@ -6,6 +6,7 @@ import UserFeedback from "../UserFeedback";
 import { useState } from "react";
 import { useHrefStore } from "@/zustand/href";
 import Link from "next/link";
+import { useVoteStore } from "@/zustand/vote";
 
 export default function PreTaskButton() {
 
@@ -14,16 +15,15 @@ export default function PreTaskButton() {
     const {party} = usePartyStore();
     const {likertscaleGrading} = useLikertscaleGradingStore();
     const {href} = useHrefStore();
+    const {triggered} = useVoteStore();
 
     const handleClick = (e: React.MouseEvent) => {
-      console.log(`TEST: ${likertscaleGrading['eligibilityBefore']}, partySlected: ${party}`)
-      console.log(`href: ${href}`)
-        if (likertscaleGrading['eligibilityBefore'] !== '' && party !== '') { 
+        if (likertscaleGrading['eligibilityBefore'] !== '' && party !== '' && triggered !== false ) { 
         } else {
           setVisbility(true);
           e.preventDefault();
         }
-      }
+    }
 
     // TODO: Better feedbacktext
 
