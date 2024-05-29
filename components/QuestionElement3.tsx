@@ -23,10 +23,10 @@ export default function QuestionElement({ question }: { question: string }) {
 
     return (
         <div className="flex-col border border-neutral-900 p-5 mb-3">
-            <div className="flex text-center justify-center mb-3">
+            <div className="flex text-center sm:text-left justify-center sm:justify-normal mb-3">
                 <h2>{question}</h2>
             </div>
-            <div className="flex mx-5 my-5 sm:my-0 justify-center">
+            <div className="flex mx-5 my-5 sm:my-0 justify-center sm:justify-normal">
                 <ul className="list-none justify-center inline-grid sm:flex">
                     <label
                         htmlFor="yes"

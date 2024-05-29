@@ -15,7 +15,7 @@ function Likertscale({topic, descriptionLeft, descriptionRight}:
   };
   
   return (
-    <div className='flex justify-center text-center w-full'>
+    <div className='flex justify-center text-center w-full sm:justify-normal'>
       <div className="inline-grid sm:flex sm:justify-center sm:items-center">
         <p className="flex-[30%]">{descriptionLeft}</p>
         <ul className="list-none px-5 py-5 sm:py-0 place-content-around place-items-center inline-grid sm:flex accent-black" id={topic}>

@@ -9,7 +9,7 @@ export default function Home() {
       </div>
         <div className="px-5 flex justify-center">
           <div className="task-box mb-3 max-w-prose place-items-center px-5 border border-neutral-900">
-              <p className="text-center">
+              <p className="">
                 You have been invited to take part in my online study. 
                 The European elections are on 9 June 2024 and we are electing national parties that can win seats in the European Parliament. 
                 Most national parties join together to form political groups. These groups have their own election programmes. 
