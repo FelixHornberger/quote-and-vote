@@ -18,8 +18,10 @@ export default function ChatHistory() {
         scrollToBottom()
     }, [messages]);
 
+    // TODO: ADD margin to first message
+
     return(
-        <div className="flex w-full sm:w-[70%] p-2 h-full sm:border sm:border-b-0 border-custom-text m-auto overflow-hidden self-center w-128 mt-[20px]">
+        <div className="flex w-full sm:w-[70%] p-2 h-full sm:border sm:border-b-0 border-custom-text m-auto overflow-hidden self-center w-128 mt-[40px] sm:mt-[20px]">
             <div className="w-full h-full">
                 <div className="overflow-y-scroll overflow-x-hidden p-2.5  break-words" id="chat-messages">
                     <Message key={-1} id={-1} role={"System"} message={"Hi, I'm a AI system designed to help you learn about the party manifesto. So ask me a question about the party program and I will answer it for you."}/>
