@@ -35,7 +35,7 @@ export default function PartySelector() {
             // addMessage({id: messageID, role: "Assistant", content: "Acknowledged.", timestamp: new Date().toLocaleTimeString()})
         }
     }
-
+            
     return (
         <select id="selected_party" className="h-6 w-full border border-custom-text bg-transparent self-center"
             style={{ fontFamily: "'__Inter_aaf875', '__Inter_Fallback_aaf875', sans-serif" }}
@@ -45,6 +45,7 @@ export default function PartySelector() {
             </option>
             <option id="eu_alde">Alliance of Liberals and Democrats for Europe Party (ALDE)</option>
             <option id="eu_ecpm">The European Christian Political Movement (ECPM)</option>
+            <option id="eu_ecr">European Conservatives and Reformists (ECR)</option>
             <option id="eu_edp">European Democrats (EDP)</option>
             <option id="eu_efa">European Free Alliance (EFA)</option>
             <option id="eu_epp">European people&apos;s party (EPP)</option>
