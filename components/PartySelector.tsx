@@ -81,13 +81,15 @@ export default function PartySelector() {
   const options = [
     { value: 'Alliance of Liberals and Democrats for Europe Party (ALDE)', label: 'Alliance of Liberals and Democrats for Europe Party (ALDE)' },
     { value: 'The European Christian Political Movement (ECPM)', label: 'The European Christian Political Movement (ECPM)' },
-    { value: 'European Conservatives and Reformists (ECR)', label: 'European Conservatives and Reformists (ECR)' },
+    { value: 'European Conservatives and Reformists (ECR-Party)', label: 'European Conservatives and Reformists (ECR-Party)' },
     { value: 'European Democrats (EDP)', label: 'European Democrats (EDP)' },
     { value: 'European Free Alliance (EFA)', label: 'European Free Alliance (EFA)' },
-    { value: 'European people\'s party (EPP)', label: 'European people\'s party (EPP)' },
     { value: 'European Greens (EGP)', label: 'European Greens (EGP)' },
     { value: 'European-LEFT (EL)', label: 'European-LEFT (EL)' },
+    { value: 'European people\'s party (EPP)', label: 'European people\'s party (EPP)' },
     { value: 'The Party of European Socialists (PES)', label: 'The Party of European Socialists (PES)' },
+    { value: 'European Pirate Party (PPEU)', label: 'European Pirate Party (PPEU)' },
+    { value: 'Volt Europa (Volt)', label: 'Volt Europa (Volt)' },
   ];
 
   // TODO: When this gets changed to its own site smt like -> preStudyPage then this handle click needs to get moved to the button logic.
