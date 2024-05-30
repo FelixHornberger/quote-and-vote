@@ -15,6 +15,9 @@ export async function POST(req: NextRequest) {
         case 'The European Christian Political Movement (ECPM)':
             party_path += "/eu/ecpm_eu-manifesto_2024.pdf"
             break;
+        case 'European Conservatives and Reformists (ECR-Party)':
+            party_path += "/eu/ecr_eu-manifesto_2024.pdf"
+            break;
         case 'European Democrats (EDP)':
             party_path += "/eu/edp_eu-manifesto_2024.pdf";
             break;
@@ -32,6 +35,12 @@ export async function POST(req: NextRequest) {
             break;
         case 'The Party of European Socialists (PES)':
             party_path += "/eu/pes_eu-manifesto_2024.pdf";
+            break;
+        case 'European Pirate Party (PPEU)':
+            party_path += "/eu/el_eu-manifesto_2024.pdf";
+            break;
+        case 'Volt Europa (Volt)':
+            party_path += "/eu/volt_eu-manifesto_2024.pdf";
             break;
     }
     console.log(`TEST: ${process.cwd() + party_path}`)
