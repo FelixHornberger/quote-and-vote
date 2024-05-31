@@ -13,7 +13,7 @@ export default function Home() {
                 You have been invited to take part in my online study. 
                 The European elections are on 9 June 2024 and we are electing national parties that can win seats in the European Parliament. 
                 Most national parties join together to form political groups. These groups have their own election programmes. 
-                The aim of this study is to analyze how LLM&apos;s and their answers provided affect users&apos; perspectives and engagement.
+                The purpose of this study is to provide participants with different means to learn about a party of their choice and analyse how this impacts their engagement with the material and the amount of political knowledge gained.
                 The study will be conducted by Felix Hornberger and supervised by Dr. David Elsweiler from the University of Regensburg. 
                 The duration of the study is 15 minutes. Students at the University of Regensburg will receive 0.25 credit hours. 
                 The study can only be started once and should be completed in one go.

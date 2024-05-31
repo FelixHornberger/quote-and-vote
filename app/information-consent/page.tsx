@@ -32,8 +32,8 @@ export default function Home() {
                             carefully and take the time you need.</p>
                         <h2 className="text-center my-2">1. Purpose and Goal of this Research</h2>
                         <p className="font-normal">
-                            The purpose of this research is to investigate how Generative Information Retrieval systems can be used for information gathering om elections. 
-                            The goal of this study is to analyze how the Generative Information Retrieval systems and their answers provided affect users&apos; perspectives and engagement on a party and their manifesto for the EU elections on 9 June 2024. Your participation will help us achieve this research goal. 
+                            The purpose of this research is to investigate how Generative Information Retrieval systems can be used for information gathering on elections. 
+                            The goal of this study is to analyse how the Generative Information Retrieval systems and the answers they provide impact the way people engagement with information on party manifestos and the amount of political knowledge gained regarding the EU elections on 9 June 2024. Your participation will help me achieve this research goal. 
                             The results of this research may be presented at scientific or professional meetings or published in scientific proceedings and journals.</p>
                         <h2 className="text-center my-2">2. Study Participation</h2>
                         <p className="font-normal">Your participation in this online study is entirely voluntary and can be discontinued or withdrawn at any
@@ -66,7 +66,7 @@ export default function Home() {
                         <p className="font-normal">In the online study, you will not be exposed to any immediate risk or danger. As with all computer systems on
                             which data is processed, despite security measures, there is a small risk of data leakage and the loss of
                             confidential or personal information. You have no direct benefit from participating in the study (unless you
-                            receive 0.25 VP hours as a student of the University of Regensburg), but you support our work and help us to
+                            receive 0.25 VP hours as a student of the University of Regensburg), but you support my work and help me to
                             advance research in this area.</p>
                         <h2 className="text-center my-2">5. Data Protection and Confidentiality</h2>
                         <p className="font-normal">In this study, personal and personally identifiable information is collected for our research. The use of personal or
