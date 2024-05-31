@@ -50,15 +50,13 @@ export default function Home() {
                                     consent process.</li>
                             <li>2. You will be quizzed to test your knowledge on EU elections and the European Parliament.</li>
                             <li>3. You will be asked to choose a party that you want to learn about. </li>
-                            <li>4. Now you either interact with a website on which the party programme has been posted or you are presented with a chat window with either a proactive chatbot 
-                                ([Claude 3 Haiku] which always adds at the end of a message that it knows even more about the party programme) or a passive chatbot (Claude 3 Haiku).
-                                Your conversation with the chatbot will be forwarded to third-party
-                                providers. Therefore, do not disclose any personal data in the chat and do not share any information
-                                that you would not discuss with other people. Only chat data will be shared with third party providers.
-                                Other data, such as demographics data, will not be shared outside the research team.</li>
-                            <li>5. After completing the task, you will be presented with a short questionnaire to determine how likely it is that you will vote in favour of this party. 
-                                You will also be asked what new things you have learned about the election programme.</li>
-                            <li>6. You are now survey abdout your personal data (age, gender, level of education, occupation, political view point and if you like to read or chat more about a topic)</li>
+                            <li>4. You will be assigned to a method of learning. This will either by a chat-based system [Claude 3 Haiku] or the party manifesto as a pdf document. 
+                                Your conversation with the chatbot will be forwarded to third-party providers. 
+                                Therefore, do not disclose any personal data in the chat and do not share any information that you would not discuss with other people. 
+                                Only chat data will be shared with third party providers. 
+                                All other data, such as demographics data and questions answered, will not be shared outside the research team.</li>
+                            <li>5. After completing the task, you will be presented with a short questionnaire to determine what you learned and whether this will impact your voting intentions.</li>
+                            <li>6. Finally, you will be asked to provide some demographic information (age, gender, level of education, occupation, political orientation)</li>
 
                         </ul>
                         <p className="font-normal my-2">The confirmation of participation in this study can be obtained directly from the researchers.</p>
