@@ -26,7 +26,7 @@ export default function Checkbox({checkboxText}: {checkboxText:string}) {
         </div>
         {accepted && 
             <div ref={navButtonRef}>
-                <NavButton href={"/demographic"}/>
+                <NavButton href={"/pre-study"}/>
             </div>
         }
         </>
