@@ -1,6 +1,6 @@
-import PartySelector from "./PartySelector";
+import PartySelector from "../PartySelector";
 
-export default function QuestionElement({question}:{question:string}) {
+export default function QuestionElement({ question }: { question: string }) {
     return (
         <div className="flex flex-col border border-neutral-900 p-5 mb-3">
             <div className="flex text-center sm:text-left justify-center sm:justify-normal mb-3">
