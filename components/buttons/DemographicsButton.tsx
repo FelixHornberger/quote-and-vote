@@ -10,6 +10,7 @@ import UserFeedback from "../UserFeedback";
 import { useLikertscaleGradingStore } from "@/zustand/likertscale";
 import { useInformationGatheringStore } from "@/zustand/informationgathering";
 import Link from "next/link";
+import { useTimeDataStore } from "@/zustand/time";
 
 export default function DemographicsButton() {
 
@@ -20,15 +21,15 @@ export default function DemographicsButton() {
     const { gender } = useGenderStore();
     const { occupation } = useOccupationStore();
     const { preferedWay } = useInformationGatheringStore();
-    const {likertscaleGrading} = useLikertscaleGradingStore();
-    const {setVP} = useVPStore();
-
+    const { likertscaleGrading } = useLikertscaleGradingStore();
+    const { setVP } = useVPStore();
     // TODO SUBMISSION LOGIC
 
     const handleClick = async (e: React.MouseEvent) => {
       if (age !== '' && levelOfEducation !== '' && gender !== '' && occupation !== '' && likertscaleGrading['politicalSelfEstimation'] !== '' && preferedWay !== '') {
           if (occupation.toLocaleLowerCase().includes('student')) {
-              setVP(true);
+            setVP(true);
+              
           }
       } else {
           setVisbility(true);
