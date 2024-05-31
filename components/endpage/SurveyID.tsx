@@ -1,9 +1,10 @@
 'use client'
 
-import { useIDtore } from "@/zustand/surveyID";
+import { useIDStore } from "@/zustand/surveyID";
 
 export default function SurveyID() {
-    const { surveyID } = useIDtore();
+
+    const { surveyID } = useIDStore();
 
     return(
         <p>Your SurveyID is: { surveyID }</p>
