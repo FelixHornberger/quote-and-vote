@@ -3,7 +3,6 @@
 import { useQuizStore } from '@/zustand/quiz';
 import React, { useState } from 'react';
 
-
 interface QuesitonElementPreStudyProps {
     question: string;
     labels: string[];
