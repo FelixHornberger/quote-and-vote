@@ -6,6 +6,7 @@ import { KeyboardEvent } from 'react';
 import Loader from "./Loader";
 import TaskButton from "../buttons/TaskButton";
 import { useSystemPromptStore } from "@/zustand/systemPrompt";
+import { useConditionStore } from "@/zustand/condition";
 
 export default function ChatInput() {
 
@@ -17,6 +18,7 @@ export default function ChatInput() {
     const updateMessage = useMessageStore((state) => state.updateMessage);
     const {systemPrompt} = useSystemPromptStore();
     const messages = useMessageStore();
+    const {activeCondition} = useConditionStore();
 
     const generateAnswer = async (e: any, prompt: string) => {
         e.preventDefault();
@@ -84,8 +86,14 @@ export default function ChatInput() {
     const handleKeyDown = async (event: KeyboardEvent<HTMLTextAreaElement>): Promise<void> => {
         if (!loading) {
             if (event.key === 'Enter' && !event.shiftKey) {
-                const messageText = event.currentTarget.value.trim();
+                let messageText = event.currentTarget.value.trim();
                 if (messageText !== '') {
+
+                    if(activeCondition) {
+                        messageText += `\n At the end of your message, let the user know that you know even more about the party programme and that they are welcome to ask you about it. 
+                        Give the user examples what else he could as you. `
+                    }
+
                     addMessageZustand({
                         id: counterChat,
                         role: "User",
