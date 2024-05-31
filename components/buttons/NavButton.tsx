@@ -11,9 +11,8 @@ export default function NavButton({ href }: { href: string }) {
   const { setTimeData } = useTimeDataStore()
 
   const handleClick = async (e: React.MouseEvent) => {
-
     switch (href) {
-      case "/pre-task":
+      case "/pre-study":
         const response = await fetch('/api/getTaskPages');
         const data = await response.json();
         setHref(data.href);
