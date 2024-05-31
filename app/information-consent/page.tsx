@@ -46,9 +46,9 @@ export default function Home() {
                         <h2 className="text-center my-2">3. Study Procedure</h2>
                         <p className="font-normal my-2">After confirming this informed consent, the procedure is as follows:</p>
                         <ul className="mb-2">
-                        <li>1. You will be initially provided with a brief introduction to the study. After this, you will complete the informed
-                                consent process.</li>
-                            <li>2. You are now survey abdout your personal data (age, gender, level of education, occupation, political view point and if you like to read or chat more about a topic)</li>
+                            <li>1. You will be initially provided with a brief introduction to the study. After this, you will complete the informed
+                                    consent process.</li>
+                            <li>2. You are now quized about EU elections and the European Parliament.</li>
                             <li>3. You are now asked to select the party you want to know more about and then you have to indicate how likely you are to vote for it. </li>
                             <li>4. Now you either interact with a website on which the party programme has been posted or you are presented with a chat window with either a proactive chatbot 
                                 ([Claude 3 Haiku] which always adds at the end of a message that it knows even more about the party programme) or a passive chatbot (Claude 3 Haiku).
@@ -58,6 +58,8 @@ export default function Home() {
                                 Other data, such as demographics data, will not be shared outside the research team.</li>
                             <li>5. After completing the task, you will be presented with a short questionnaire to determine how likely it is that you will vote in favour of this party. 
                                 You will also be asked what new things you have learned about the election programme.</li>
+                            <li>6. You are now survey abdout your personal data (age, gender, level of education, occupation, political view point and if you like to read or chat more about a topic)</li>
+
                         </ul>
                         <p className="font-normal my-2">The confirmation of participation in this study can be obtained directly from the researchers.</p>
                         <h2 className="text-center my-2">4. Risks and Benefits</h2>
