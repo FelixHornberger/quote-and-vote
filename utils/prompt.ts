@@ -31,14 +31,6 @@ export async function generatePrompt(party_name: string, condition: boolean) {
     let prompt = `You are a generative AI model that has the task of informing the user about the party's election programme for the 2024 EU elections. 
                     The party is ${party_name}. 
                     There manifesto is:\n`;
-    // if (condition) {
-    //     prompt = `You are a generative AI model that has the task of informing the user about the party's election programme for the 2024 EU elections. 
-    //                 At the end of your message, let the user know that you know even more about the party programme and that they are welcome to ask you about it. 
-    //                 Give the user examples what else he could as you. 
-    //                 The party is ${party_name}. There manifesto is:\n`;
-    // }
-    console.log("TEST Condition: ", condition)
-    console.log("Systemprompt: ", prompt)
     const manifesto = await getManifesto(party_name);
     prompt += manifesto;
     return prompt;

@@ -6,8 +6,6 @@ import NavButton from "@/components/buttons/NavButton";
 export default function Home() {
   
   const {href} = useHrefStore();
-
-  console.log("HREF: ",href)
     
   let stringToDisplay = `On the next page, you will see the party programme as a PDF. It may take up to 5 seconds to load the PDF. 
       You can spend as much time as you like looking at the party programme. 

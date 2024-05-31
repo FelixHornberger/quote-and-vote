@@ -20,11 +20,9 @@ const QuesitonElementPreStudy: React.FC<QuesitonElementPreStudyProps> = ({
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    console.log(value);
-    
+
     setSelectedValue(value);
     setQuizAnswer({ [answerKey]: value }); // Update the store with the selected value
-    console.log(answerKey)
   };
 
   return (

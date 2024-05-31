@@ -5,7 +5,6 @@ export async function POST(req: Request) {
         let { party_name } = (await req.json()) as {
             party_name: string,
         };
-        console.log("Test: ", party_name)
         let party_path = "/app/data"
         switch (party_name) {
             case 'Alliance of Liberals and Democrats for Europe Party (ALDE)':

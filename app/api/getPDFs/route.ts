@@ -7,7 +7,6 @@ export async function POST(req: NextRequest) {
         party_name: string,
     };
     let party_path = "/app/data"
-    console.log(`Partyname: ${party_name}`);
     switch (party_name) {
         case 'Alliance of Liberals and Democrats for Europe Party (ALDE)':
             party_path += "/eu/alde_eu-manifesto_2024.pdf";
@@ -43,8 +42,6 @@ export async function POST(req: NextRequest) {
             party_path += "/eu/volt_eu-manifesto_2024.pdf";
             break;
     }
-    console.log(`TEST: ${process.cwd() + party_path}`)
-    console.log(`Partypath: ${party_path}`)
     const pdfBuffer = fs.readFileSync(process.cwd() + party_path);
 
     const headers = {
