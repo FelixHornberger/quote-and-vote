@@ -3,14 +3,17 @@ import { useLikertscaleGradingStore } from '@/zustand/likertscale';
 import Link from 'next/link';
 import { useState } from 'react';
 import UserFeedback from '../UserFeedback';
+import { useTimeDataStore } from '@/zustand/time';
 
 export default function PostTaskButton(){
 
     const [showUserFeedback, setVisbility] = useState(false);
     const {likertscaleGrading} = useLikertscaleGradingStore();
+    const {setTimeData} = useTimeDataStore()
 
     const handleClick = (e: React.MouseEvent) => {
         if (likertscaleGrading['eligibilityAfter'] !== '' ) { 
+            setTimeData({postTask: new Date().toLocaleTimeString()});
         } else {
           setVisbility(true);
           e.preventDefault();

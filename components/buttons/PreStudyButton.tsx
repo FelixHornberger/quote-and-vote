@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import UserFeedback from '../UserFeedback';
 import { useQuizStore } from '@/zustand/quiz';
+import { useTimeDataStore } from '@/zustand/time';
 
 export default function PreStudyButton(){
 
     const [showUserFeedback, setVisbility] = useState(false);
-    const {quizData} = useQuizStore();
+    const { quizData } = useQuizStore();
+    const {setTimeData} = useTimeDataStore();
 
     const handleClick = (e: React.MouseEvent) => {
         if (quizData['answer1'] !== '' && 
@@ -17,6 +19,7 @@ export default function PreStudyButton(){
             quizData['answer4'] !== '' &&
             quizData['answer5'] !== ''
          ) { 
+            setTimeData({preStudy: new Date().toLocaleTimeString()});
         } else {
           setVisbility(true);
           e.preventDefault();
