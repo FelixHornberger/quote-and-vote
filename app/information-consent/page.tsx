@@ -48,8 +48,8 @@ export default function Home() {
                         <ul className="mb-2">
                             <li>1. You will be initially provided with a brief introduction to the study. After this, you will complete the informed
                                     consent process.</li>
-                            <li>2. You are now quized about EU elections and the European Parliament.</li>
-                            <li>3. You are now asked to select the party you want to know more about and then you have to indicate how likely you are to vote for it. </li>
+                            <li>2. You will be quizzed to test your knowledge on EU elections and the European Parliament.</li>
+                            <li>3. You will be asked to choose a party that you want to learn about. </li>
                             <li>4. Now you either interact with a website on which the party programme has been posted or you are presented with a chat window with either a proactive chatbot 
                                 ([Claude 3 Haiku] which always adds at the end of a message that it knows even more about the party programme) or a passive chatbot (Claude 3 Haiku).
                                 Your conversation with the chatbot will be forwarded to third-party
