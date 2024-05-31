@@ -11,7 +11,7 @@ export default function Home() {
             </div>
             <div className="px-5 flex justify-center">
                 <div className="task-box mb-3 max-w-prose place-items-center px-5 border border-neutral-900">
-                    <p className="text-padding text-center">
+                    <p className="text-padding">
                         <SurveyID/>
                         <br />
                         If you have any questions or comments about the study, please do not hesitate to contact me.
