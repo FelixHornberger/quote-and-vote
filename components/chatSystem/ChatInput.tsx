@@ -87,10 +87,11 @@ export default function ChatInput() {
         if (!loading) {
             if (event.key === 'Enter' && !event.shiftKey) {
                 let messageText = event.currentTarget.value.trim();
+                let messageToSend = messageText;
                 if (messageText !== '') {
 
                     if(activeCondition) {
-                        messageText += `\n At the end of your message, let the user know that you know even more about the party programme and that they are welcome to ask you about it. 
+                        messageToSend += `\n At the end of your message, let the user know that you know even more about the party programme and that they are welcome to ask you about it. 
                         Give the user examples what else he could as you. `
                     }
 
@@ -103,9 +104,9 @@ export default function ChatInput() {
                     );
                     event.currentTarget.value = '';
                     if (counterChat === 0) {
-                        generateAnswer(event, messageText);
+                        generateAnswer(event, messageToSend);
                     } else {
-                        generateAnswer(event, messageText);
+                        generateAnswer(event, messageToSend);
                     }
 
                     if (!showButton) {
