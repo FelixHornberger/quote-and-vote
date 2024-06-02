@@ -89,7 +89,8 @@ export default function ChatInput() {
                 let messageText = event.currentTarget.value.trim();
                 let messageToSend = messageText;
                 if (messageText !== '') {
-
+                    
+                    messageToSend += `Keep your answer short.`
                     if(activeCondition) {
                         messageToSend += `\n At the end of your message, let the user know that you know even more about the party programme and that they are welcome to ask you about it. 
                         Give the user examples what else he could as you. `
