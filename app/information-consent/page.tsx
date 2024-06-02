@@ -19,7 +19,7 @@ export default function Home() {
                             <li>- Your participation is entirely voluntary and can be discontinued or withdrawn at any time</li>
                             <li>- You have no direct benefit from participating in the study (unless you receive 0.25 VP hours as a student
                                 of the University of Regensburg), but you support my work and help to advance research in this area.</li>
-                            <li>- For the evaluation, we collect some basic demographic personal information (e.g., age, gender, etc.)</li>
+                            <li>- For the evaluation, I collect some basic demographic personal information (e.g., age, gender, etc.)</li>
                             <li>- During the course of the session, all inquiries and corresponding responses entered into the system will
                                 be meticulously documented, inclusive of timestamp data.</li>
                             <li>- Recordings and personal data are subject to the guidelines of the General Data Protection Regulation
@@ -39,7 +39,7 @@ export default function Home() {
                         <p className="font-normal">Your participation in this online study is entirely voluntary and can be discontinued or withdrawn at any
                             time. You can refuse to answer any questions or continue with the study at any time if you feel
                             uncomfortable in any way. You can discontinue or withdraw your participation at any time without giving
-                            a reason. However, we reserve the right to exclude you from the study (e.g. in the case of invalid
+                            a reason. However, I reserve the right to exclude you from the study (e.g. in the case of invalid
                             attempts or if continuing the study could have a negative impact on your well-being or the equipment).
                             You will receive the offered compensation even if you discontinue the study. Repeated participation in
                             the study is not permitted.</p>
@@ -71,7 +71,7 @@ export default function Home() {
                             personally identifiable data is subject to the General Data Protection Regulation (GDPR) of the European Union
                             (EU) and will be handled in accordance with the GDPR. This means that you can view, correct, restrict the
                             processing of and have deleted the data collected in this study. Your entries will only be registered in the study
-                            with your consent. We plan to publish the results of this and other research studies in scientific articles or other
+                            with your consent. I plan to publish the results of this and other research studies in scientific articles or other
                             media. Your data will be kept until you contact the researchers to have your data destroyed or deleted. Access to
                             the raw data of the study will be encrypted, password protected during the analysis and only for the authors,
                             colleagues and researchers collaborating on this research. As part of the research work, the data is anonymised
