@@ -1,57 +1,42 @@
-import fs from 'fs';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    let { party_name } = (await req.json()) as {
-        party_name: string,
+    const body = await req.json();
+    console.log('Received body:', body);
+
+    const { party } = body as { party: string };
+    console.log('Parsed party:', party);
+
+    const partyPaths: { [key: string]: string } = {
+      'Alliance of Liberals and Democrats for Europe Party (ALDE)': 'https://drive.google.com/file/d/1JfxnQNmB4g7RuqcIVB4J-Ej3-21DUF1J/previe',
+      'The European Christian Political Movement (ECPM)': 'https://drive.google.com/file/d/1eBZ2KUjfkRC4FkxpvmxCQk52uKKf9rW1/preview',
+      'European Conservatives and Reformists (ECR-Party)': 'https://drive.google.com/file/d/1kgCfE-2Xo8NpBaLnnyHrKh9aCgKqbAFQ/preview',
+      'European Democrats (EDP)': 'https://drive.google.com/file/d/1wBS1v7ntL3c0ces8dHJgG9cCLAVY9aKw/preview',
+      'European Free Alliance (EFA)': 'https://drive.google.com/file/d/1EFstKKkvU2QarE0FCXHz93PhZPHLSMMP/preview',
+      'European people\'s party (EPP)': 'https://drive.google.com/file/d/19XkIXcV-QY5SghHw58RGhMegIWmBSUtR/preview',
+      'European Greens (EGP)': 'https://drive.google.com/file/d/1Ysoshn_4NqPhTNEIbgRa7hgv3hj-o_BM/preview',
+      'European-LEFT (EL)': 'https://drive.google.com/file/d/1tzoWcXsJHBWCuAlR5HQE_Hl_6UmJ63eM/preview',
+      'The Party of European Socialists (PES)': 'https://drive.google.com/file/d/1EYiUlQXO0cvdzoZHp4rtpwCaOnDnJA8n/preview',
+      'European Pirate Party (PPEU)': 'https://drive.google.com/file/d/1l05EjohR_SdKT2aQBugOjTmWL-CTz8NV/preview',
+      'Volt Europa (Volt)': 'https://drive.google.com/file/d/10srivalu1qzMqNE8AsGYvTZkTRulnLZT/preview',
     };
-    let party_path = "/app/data"
-    switch (party_name) {
-        case 'Alliance of Liberals and Democrats for Europe Party (ALDE)':
-            party_path += "/eu/alde_eu-manifesto_2024.pdf";
-            break;
-        case 'The European Christian Political Movement (ECPM)':
-            party_path += "/eu/ecpm_eu-manifesto_2024.pdf"
-            break;
-        case 'European Conservatives and Reformists (ECR-Party)':
-            party_path += "/eu/ecr_eu-manifesto_2024.pdf"
-            break;
-        case 'European Democrats (EDP)':
-            party_path += "/eu/edp_eu-manifesto_2024.pdf";
-            break;
-        case 'European Free Alliance (EFA)':
-            party_path += "/eu/efa_eu-manifesto_2024.pdf";
-            break;
-        case 'European people\'s party (EPP)':
-            party_path += "/eu/epp_eu-manifesto_2024.pdf";
-            break;
-        case 'European Greens (EGP)':
-            party_path += "/eu/egp_eu-manifesto_2024.pdf";
-            break;
-        case 'European-LEFT (EL)':
-            party_path += "/eu/el_eu-manifesto_2024.pdf";
-            break;
-        case 'The Party of European Socialists (PES)':
-            party_path += "/eu/pes_eu-manifesto_2024.pdf";
-            break;
-        case 'European Pirate Party (PPEU)':
-            party_path += "/eu/el_eu-manifesto_2024.pdf";
-            break;
-        case 'Volt Europa (Volt)':
-            party_path += "/eu/volt_eu-manifesto_2024.pdf";
-            break;
+
+    const partyPath = partyPaths[party];
+    console.log('Found partyPath:', partyPath);
+
+    if (!partyPath) {
+      console.log('Party not found');
+      return new NextResponse('Party not found', { status: 404 });
     }
-    const pdfBuffer = fs.readFileSync(process.cwd() + party_path);
 
-    const headers = {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': `inline; filename="${party_name}_eu-manifesto_2024.pdf"`,
-    };
-
-    return new NextResponse(pdfBuffer, { headers });
+    return new Response(partyPath, {
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+    });
   } catch (error) {
     console.error('Error serving PDF:', error);
-    return new NextResponse('Error serving PDF', { status: 500 });
-  }
+    return new NextResponse('Error serving PDF', { status: 500 });
+  }
 }

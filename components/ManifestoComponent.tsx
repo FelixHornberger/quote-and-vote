@@ -17,38 +17,38 @@ const ManifestoComponent = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ party_name: party }),
+          body: JSON.stringify({ party }),
         });
-
-        if (response.ok) {
-          const pdfBlob = await response.blob();
-          const pdfUrl = URL.createObjectURL(pdfBlob);
-          setPdfData(pdfUrl);
-        } else {
-          console.error('Error fetching PDF:', response.status);
+  
+        if (!response.ok) {
+          const errorMessage = await response.text();
+          throw new Error(`Error fetching PDF: ${errorMessage}`);
         }
+  
+        const data = await response.text();
+        setPdfData(new URL(data, window.location.href).href);
       } catch (error) {
         console.error('Error fetching PDF:', error);
       }
     };
-
     fetchPDF();
   }, [party]);
+
 
   return (
     <>
       {pdfData ? (
-        <object data={pdfData} type="application/pdf" className='w-full sm:px-5 h-[90%]'>
-          <p>Your browser doesn&apos;t support embedded PDFs. Please download the PDF to view it:</p>
-          <a href={pdfData} target="_blank" rel="noopener noreferrer">
-            Download PDF
-          </a>
-        </object>
+        <embed
+          src={pdfData}
+          className="w-full sm:w-[95%] h-[80%]"
+          title="PDF Viewer"
+        />
       ) : (
         <p>Loading PDF...</p>
       )}
     </>
   );
 };
+
 
 export default ManifestoComponent;
