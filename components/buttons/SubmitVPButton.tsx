@@ -48,7 +48,7 @@ export default function SubmitVPButton() {
     }
     return (
         <>
-            {showUserFeedback && <UserFeedback feedbackText='In order for the VP hours to be credited, we need all the data!' />}
+            {showUserFeedback && <UserFeedback feedbackText='In order for the VP hours to be credited, I need all the data!' />}
             <button className='bg-custom-accent p-2 font-semibold my-3' onClick={() => handleclick()}>SubmitVP</button>
         </>
     );
