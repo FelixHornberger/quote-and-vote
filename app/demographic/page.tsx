@@ -34,14 +34,16 @@ export default function Home() {
                     <Occupation></Occupation>
                 </div>
                 <div className="mb-3 text-left">
-                    <p> What would have been your favourite way to find out about the party manifesto? </p>
+                    <p> What would have been your favourite way to inform yourself about the party manifesto? </p>
                     <PreferedInformationGatheringWay/>
                 </div>
                 <div className="mb-3 text-left">
                     <p>
-                        Where do you place yourself on the political scale?
+                        Where would you place yourself on the political scale?
                     </p>
-                    <Likertscale topic="politicalSelfEstimation" descriptionLeft="Far left" descriptionRight="Far right"></Likertscale>
+                    <div className="flex flex-col border border-neutral-900 p-5 mb-3">
+                        <Likertscale topic="politicalSelfEstimation" descriptionLeft="Far left" descriptionRight="Far right"></Likertscale>
+                    </div>
                 </div>
                 <DemographicsButton></DemographicsButton>
             </div>

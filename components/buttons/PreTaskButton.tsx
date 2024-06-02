@@ -12,11 +12,10 @@ export default function PreTaskButton() {
   const [showUserFeedback, setVisbility] = useState(false);
   
   const { party } = usePartyStore();
-  const { triggered } = useVoteStore();
   const {setTimeData} = useTimeDataStore();
 
   const handleClick = async (e: React.MouseEvent) => {
-      if (party !== '' && triggered !== false ) {
+      if (party !== '') {
         setTimeData({preTask: new Date().toLocaleTimeString()});
       } else {
         setVisbility(true);
@@ -29,7 +28,7 @@ export default function PreTaskButton() {
   return (
       <div className='flex felx-col justify-center items-center text-center mb-3'>
         <div>
-          {showUserFeedback && <UserFeedback feedbackText='You cannot go to the next page without having stated all questions' />}
+          {showUserFeedback && <UserFeedback feedbackText='You cannot go to the next page without having selected a party.' />}
           <Link href='/task-des'>
             <button onClick={handleClick} className="bg-custom-accent p-2 font-semibold mt-3">
               Next page

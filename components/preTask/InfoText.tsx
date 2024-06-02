@@ -9,7 +9,7 @@ export default function InfoText() {
                 </p>
                 <br/>
                 <p>
-                    According to the Parliament&apos;s Rules of Procedure, a political group must comprise at least 23 MEPs elected in at least one quarter of the Member States, currently seven Member States. 
+                    According to the Parliament&apos;s Rules of Procedure, a political group must comprise at least 23 MEPs elected in at least seven Member States. 
                     MEPs can only belong to one political group. However, they can also choose not to join a political group and remain ‘non-attached’. 
                     There are currently 46 non-attached MEPs.
                 </p>
