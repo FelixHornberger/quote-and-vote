@@ -22,7 +22,7 @@ export default function PostTaskButton(){
 
     return (
         <div className='flex flex-col text-center justify-center'>
-            {showUserFeedback && <UserFeedback feedbackText='You cannot go to the next page without having stated all topics' />}
+            {showUserFeedback && <UserFeedback feedbackText='You cannot move on to the next page without answering the first question.' />}
             <Link href="/demographic" passHref>
                 <button className='bg-custom-accent p-2 font-semibold my-3' onClick={handleClick}>
                     Next Page
