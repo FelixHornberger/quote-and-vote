@@ -22,7 +22,6 @@
     //PreTask
     party TEXT NOT NULL,
     partyInterest TEXT NOT NULL,
-    partyVote TEXT NOT NULL,
 
     //
     chat   BOOLEAN NOT NULL,
@@ -91,29 +90,17 @@ export const POST = async (req: NextRequest) => {
           (participant_id, age, gender, levelOfEducation, occupation, preferedInformationGatheringWay, politicalSelfEstimation,
           eligibilityAfter, argumentsAfter, 
           quizAnswers,
-          party, partyInterest, partyVote,
+          party, partyInterest,
           chat, condition,
           timestamps, timestamp_demographic, dateOfSubmission)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)`,
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)`,
         [
-          participant_id,
-          age,
-          gender,
-          levelOfEducation,
-          occupation,
-          preferedInformationGatheringWay,
-          politicalSelfEstimation,
-          eligibilityAfter,
-          argumentsAfter,
+          participant_id, age, gender, levelOfEducation, occupation, preferedInformationGatheringWay, politicalSelfEstimation,
+          eligibilityAfter, argumentsAfter,
           quizAnswers,
-          party,
-          partyInterest,
-          partyVote,
-          chat,
-          condition,
-          timestamps,
-          timestamp_demographic,
-          dateOfSubmission,
+          party, partyInterest,
+          chat, condition,
+          timestamps, timestamp_demographic, dateOfSubmission,
         ]
       );
   
