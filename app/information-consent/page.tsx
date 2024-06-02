@@ -18,7 +18,7 @@ export default function Home() {
                         <ul className="mb-2">
                             <li>- Your participation is entirely voluntary and can be discontinued or withdrawn at any time</li>
                             <li>- You have no direct benefit from participating in the study (unless you receive 0.25 VP hours as a student
-                                of the University of Regensburg), but you support our work and help to advance research in this area.</li>
+                                of the University of Regensburg), but you support my work and help to advance research in this area.</li>
                             <li>- For the evaluation, we collect some basic demographic personal information (e.g., age, gender, etc.)</li>
                             <li>- During the course of the session, all inquiries and corresponding responses entered into the system will
                                 be meticulously documented, inclusive of timestamp data.</li>
@@ -67,7 +67,7 @@ export default function Home() {
                             receive 0.25 VP hours as a student of the University of Regensburg), but you support my work and help me to
                             advance research in this area.</p>
                         <h2 className="text-center my-2">5. Data Protection and Confidentiality</h2>
-                        <p className="font-normal">In this study, personal and personally identifiable information is collected for our research. The use of personal or
+                        <p className="font-normal">In this study, personal and personally identifiable information is collected for my research. The use of personal or
                             personally identifiable data is subject to the General Data Protection Regulation (GDPR) of the European Union
                             (EU) and will be handled in accordance with the GDPR. This means that you can view, correct, restrict the
                             processing of and have deleted the data collected in this study. Your entries will only be registered in the study
