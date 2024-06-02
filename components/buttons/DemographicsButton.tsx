@@ -16,7 +16,6 @@ import { useArgumentStore } from "@/zustand/argument";
 import { useQuizStore } from "@/zustand/quiz";
 import { usePartyStore } from "@/zustand/party";
 import { useInterestStore } from "@/zustand/interest";
-import { useVoteStore } from "@/zustand/vote";
 import { useHrefStore } from "@/zustand/href";
 import { useConditionStore } from "@/zustand/condition";
 import { useMessageStore } from "@/zustand/message";
@@ -40,7 +39,6 @@ export default function DemographicsButton() {
 
     const {party} = usePartyStore();
     const {interest} = useInterestStore();
-    const {vote} = useVoteStore();
 
     const {href} = useHrefStore();
     const {activeCondition} = useConditionStore();
@@ -82,7 +80,6 @@ export default function DemographicsButton() {
 
               "party": party, 
               "partyInterest": interest, 
-              "partyVote": vote,
 
               "chat": chat, 
               "condition": activeCondition,
