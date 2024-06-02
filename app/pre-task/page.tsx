@@ -2,7 +2,6 @@ import PreTaskButton from "@/components/buttons/PreTaskButton";
 import InfoText from "@/components/preTask/InfoText";
 import QuestionElement from "@/components/preTask/QuestionElement";
 import QuestionElement2 from "@/components/preTask/QuestionElement2";
-import QuestionElement3 from "@/components/preTask/QuestionElement3";
 
 export default function Home() {
 
@@ -15,7 +14,6 @@ export default function Home() {
         <InfoText></InfoText>
         <QuestionElement2 question={"In what EU-party are you interested?"}></QuestionElement2>
         <QuestionElement question={"Why are you interested in this party?"} topic={"eligibilityBefore"}  ></QuestionElement>
-        <QuestionElement3 question="Would you vote for a party in this eu-party?"></QuestionElement3>
       </div>
       <PreTaskButton></PreTaskButton>
     </main>
