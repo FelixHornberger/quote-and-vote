@@ -87,7 +87,8 @@ export const POST = async (req: NextRequest) => {
       }
       await client.query(
         `INSERT INTO Participants 
-          (participant_id, age, gender, levelOfEducation, occupation, preferedInformationGatheringWay, politicalSelfEstimation,
+          (participant_id,
+          age, gender, levelOfEducation, occupation, preferedInformationGatheringWay, politicalSelfEstimation,
           eligibilityAfter, argumentsAfter, 
           quizAnswers,
           party, partyInterest,
