@@ -40,9 +40,8 @@ export default function Home() {
                             time. You can refuse to answer any questions or continue with the study at any time if you feel
                             uncomfortable in any way. You can discontinue or withdraw your participation at any time without giving
                             a reason. However, I reserve the right to exclude you from the study (e.g. in the case of invalid
-                            attempts or if continuing the study could have a negative impact on your well-being or the equipment).
-                            You will receive the offered compensation even if you discontinue the study. Repeated participation in
-                            the study is not permitted.</p>
+                            attempts or if continuing the study could have a negative impact on your well-being or the equipment). 
+                            Repeated participation in the study is not permitted.</p>
                         <h2 className="text-center my-2">3. Study Procedure</h2>
                         <p className="font-normal my-2">After confirming this informed consent, the procedure is as follows:</p>
                         <ul className="mb-2">
