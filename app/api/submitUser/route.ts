@@ -26,7 +26,8 @@
     //
     chat   BOOLEAN NOT NULL,
     condition BOOLEAN NOT NULL,
-    
+    eng BOOLEAN NOT NULL,
+
     //Time
     timestamps TEXT NOT NULL,
     timestamp_demographic TEXT NOT NULL,
@@ -66,9 +67,9 @@ export const POST = async (req: NextRequest) => {
         quizAnswers,
         party,
         partyInterest,
-        partyVote,
         chat,
         condition,
+        eng,
         timestamps,
         timestamp_demographic,
         dateOfSubmission,
@@ -92,15 +93,15 @@ export const POST = async (req: NextRequest) => {
           eligibilityAfter, argumentsAfter, 
           quizAnswers,
           party, partyInterest,
-          chat, condition,
+          chat, condition, eng,
           timestamps, timestamp_demographic, dateOfSubmission)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)`,
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)`,
         [
           participant_id, age, gender, levelOfEducation, occupation, preferedInformationGatheringWay, politicalSelfEstimation,
           eligibilityAfter, argumentsAfter,
           quizAnswers,
           party, partyInterest,
-          chat, condition,
+          chat, condition, eng,
           timestamps, timestamp_demographic, dateOfSubmission,
         ]
       );

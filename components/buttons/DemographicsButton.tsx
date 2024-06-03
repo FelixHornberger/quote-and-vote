@@ -83,6 +83,7 @@ export default function DemographicsButton() {
 
               "chat": chat, 
               "condition": activeCondition,
+              "eng": true,
 
               "timestamps": timeData,  
               "timestamp_demographic": new Date().toLocaleTimeString(),
