@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     console.log('Parsed party:', party);
 
     const partyPaths: { [key: string]: string } = {
-      'Alliance of Liberals and Democrats for Europe Party (ALDE)': 'https://drive.google.com/file/d/1JfxnQNmB4g7RuqcIVB4J-Ej3-21DUF1J/previe',
+      'Alliance of Liberals and Democrats for Europe Party (ALDE)': 'https://drive.google.com/file/d/1JfxnQNmB4g7RuqcIVB4J-Ej3-21DUF1J/preview',
       'The European Christian Political Movement (ECPM)': 'https://drive.google.com/file/d/1eBZ2KUjfkRC4FkxpvmxCQk52uKKf9rW1/preview',
       'European Conservatives and Reformists (ECR-Party)': 'https://drive.google.com/file/d/1kgCfE-2Xo8NpBaLnnyHrKh9aCgKqbAFQ/preview',
       'European Democrats (EDP)': 'https://drive.google.com/file/d/1wBS1v7ntL3c0ces8dHJgG9cCLAVY9aKw/preview',
