@@ -35,7 +35,7 @@ export async function POST(req: Request) {
                 party_path += "/eu/pes_eu-manifesto_2024.txt";
                 break;
             case 'European Pirate Party (PPEU)':
-                party_path += "/eu/el_eu-manifesto_2024.txt";
+                party_path += "/eu/ppeu_eu-manifesto_2024.txt";
                 break;
             case 'Volt Europa (Volt)':
                 party_path += "/eu/volt_eu-manifesto_2024.txt";
