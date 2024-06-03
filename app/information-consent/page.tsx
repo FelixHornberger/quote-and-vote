@@ -45,8 +45,7 @@ export default function Home() {
                         <h2 className="text-center my-2">3. Study Procedure</h2>
                         <p className="font-normal my-2">After confirming this informed consent, the procedure is as follows:</p>
                         <ul className="mb-2">
-                            <li>1. You will be initially provided with a brief introduction to the study. After this, you will complete the informed
-                                    consent process.</li>
+                            <li>1. You will be initially provided with a brief introduction to the study</li>
                             <li>2. You will be quizzed to test your knowledge on EU elections and the European Parliament.</li>
                             <li>3. You will be asked to choose a party that you want to learn about. </li>
                             <li>4. You will be assigned to a method of learning. This will either by a chat-based system [Claude 3 Haiku] or the party manifesto as a pdf document. 
