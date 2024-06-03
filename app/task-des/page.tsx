@@ -9,12 +9,12 @@ export default function Home() {
     
   let stringToDisplay = `On the next page, you will see the party programme as a PDF. It may take up to 5 seconds to load the PDF. 
       You can spend as much time as you like looking at the party programme. 
-      As soon as you have all the information about the party programme, you can go to the next page.`
+      As soon as you have all the information about the party programme, that is important to you, go to the next page.`
 
   if (href === '/chat') {
     stringToDisplay = `On the next page, you can chat with a chatbot about the party programme. 
     You can chat for as long as you like. 
-    When you have all the information about the party programme that is important to you, you can go to the next page.`
+    When you have all the information about the party programme, that is important to you, go to the next page.`
   }
   
   return (
