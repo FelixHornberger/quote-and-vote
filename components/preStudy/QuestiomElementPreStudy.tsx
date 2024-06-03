@@ -31,7 +31,7 @@ const QuesitonElementPreStudy: React.FC<QuesitonElementPreStudyProps> = ({
         <h2 className="whitespace-pre-line">{question}</h2>
       </div>
       <div className="flex my-5 sm:my-0 justify-center sm:justify-start">
-        <ul className="list-none inline-grid sm:flex">
+        <ul className="list-none inline-grid sm:flex flex-wrap">
           {labels.map((label, index) => (
             <label
             key={index}
